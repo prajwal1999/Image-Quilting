@@ -7,10 +7,10 @@ import numpy as np
 
 block_size = 50
 overlap_size = 20
-result_size = 300
-threshold = 0.02
+result_size = 200
+threshold = 0.005
 
-image = load_image(file_path='./dataset/synthesis/t10.jpeg')
+image = load_image(file_path='./dataset/synthesis/t11.png')
 [r, c, g] = image.shape
 blocks = []
 result = np.ones([result_size, result_size, g])*-1
