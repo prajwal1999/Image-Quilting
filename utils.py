@@ -69,6 +69,17 @@ def get_path(err):
     return mask
 
 
+
+
+
+
+
+
+
+
+
+###############
+
 def get_mask(block, ov_v, ov_h, ov_type, overlap_size):
     
     block = rgb2gray(block)
