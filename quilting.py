@@ -8,7 +8,7 @@ import numpy as np
 block_size = 28
 overlap_size = 10
 result_size = 500
-threshold = 2
+threshold = 0.02
 
 image = load_image(file_path='./dataset/synthesis/t19.png')
 [r, c, g] = image.shape
@@ -43,4 +43,4 @@ for i in range(blocks_in_row):
             end_y = min(start_y+(block_size-1), result_size-1)
 
             curr_box_to_fill = result[start_x:end_x, start_y:end_y, :]
-            matched_box = compare_block(blocks, curr_box_to_fill, block_size, threshold)
+            best_box = compare_block(blocks, curr_box_to_fill, block_size, threshold)
