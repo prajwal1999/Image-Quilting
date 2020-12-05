@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 # import matplotlib.image as mpimg
 import numpy as np
 
-block_size = 50
-overlap_size = 20
-result_size = 300
-threshold = 0.02
+block_size = 100
+overlap_size = 50
+result_size = 500
+threshold = 0.005
 
-image = load_image(file_path='./dataset/synthesis/t10.jpeg')
+image = load_image(file_path='./dataset/synthesis/t11.png')
 [r, c, g] = image.shape
 blocks = []
 result = np.ones([result_size, result_size, g])*-1
