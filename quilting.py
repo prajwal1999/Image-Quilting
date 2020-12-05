@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 # import matplotlib.image as mpimg
 import numpy as np
 
-block_size = 100
-overlap_size = 50
-result_size = 500
+block_size = 50
+overlap_size = 20
+result_size = 200
 threshold = 0.005
 
 image = load_image(file_path='./dataset/synthesis/t11.png')
