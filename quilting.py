@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 # import matplotlib.image as mpimg
 import numpy as np
 
-block_size = 50
-overlap_size = 20
-result_size = 200
-threshold = 0.005
+block_size = 60
+overlap_size = 10
+result_size = 400
+threshold = 0.01
 
 def quilting(file_path, result_path):
     image = load_image(file_path=file_path)
@@ -57,7 +57,8 @@ def quilting(file_path, result_path):
 
             completion = 100.0/blocks_in_row*(i + j*1.0/blocks_in_col)
 
-            print("{0:.2f}% complete...".format(completion))
+            print("Quilting for {name} {per:.2f}% complete...".format(name=file_path, per=completion))
 
     result = np.asarray(result, dtype=np.uint8)
     Image.fromarray(result).save(result_path)
+    print('Image saved')
