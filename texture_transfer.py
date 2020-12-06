@@ -5,7 +5,7 @@ import numpy as np
 path = './dataset/transfer/'
 
 block_size = 20
-overlap_size = 5
+overlap_size = 10
 alpha = 0.1
 tolerance = 0.01
 
