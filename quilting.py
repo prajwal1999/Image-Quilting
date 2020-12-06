@@ -1,8 +1,6 @@
 from PIL import Image
 from utils import load_image
 from utils import compare_blocks, get_mask
-import matplotlib.pyplot as plt
-# import matplotlib.image as mpimg
 import numpy as np
 
 block_size = 60
@@ -61,4 +59,5 @@ def quilting(file_path, result_path):
 
     result = np.asarray(result, dtype=np.uint8)
     Image.fromarray(result).save(result_path)
+    return Image.fromarray(result)
     print('Image saved')
