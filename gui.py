@@ -5,6 +5,7 @@ path = './dataset/synthesis/'
 from quilting import quilting
 from PIL import ImageTk, Image
 test_images = [f for f in listdir(path) if isfile(join(path, f))]
+test_images = sorted(test_images)
 
 root = Tk()
 # Code to add widgets will go here...
