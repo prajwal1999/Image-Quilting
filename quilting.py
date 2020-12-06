@@ -2,17 +2,21 @@ from PIL import Image
 from utils import load_image
 from utils import compare_blocks, get_mask
 import numpy as np
+path = './dataset/synthesis/'
 
-block_size = 60
-overlap_size = 10
+block_size = 100
+overlap_size = 30
 result_size = 400
 threshold = 0.01
 
-def quilting(file_path, result_path):
-    image = load_image(file_path=file_path)
+def quilting(image_name, result_path):
+    image = load_image(path+image_name)
     [r, c, g] = image.shape
     blocks = []
     result = np.ones([result_size, result_size, g])*-1
+    global block_size
+    # pre work
+    if r<block_size: block_size = 2*r//3
 
     for i in range(r-block_size+1):
         for j in range(c-block_size+1):
@@ -55,9 +59,9 @@ def quilting(file_path, result_path):
 
             completion = 100.0/blocks_in_row*(i + j*1.0/blocks_in_col)
 
-            print("Quilting for {name} {per:.2f}% complete...".format(name=file_path, per=completion))
+            print("Synthesis for {name} {per:.2f}% complete...".format(name=image_name, per=completion))
 
     result = np.asarray(result, dtype=np.uint8)
-    Image.fromarray(result).save(result_path)
+    Image.fromarray(result).save(result_path+image_name.split('.')[0]+'_b='+str(block_size)+'_ov='+str(overlap_size)+'_t='+str(threshold)+'.'+image_name.split('.')[1])
     return Image.fromarray(result)
     print('Image saved')

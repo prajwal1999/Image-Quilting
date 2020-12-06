@@ -5,6 +5,7 @@ path = './dataset/synthesis/'
 
 test_images = [f for f in listdir(path) if isfile(join(path, f))]
 
-for img in test_images:
-    quilting(path+img, path+'results/'+img.split('.')[0]+'_b=60_ov=10_t=0.01.'+img.split('.')[1])
+for (index, img) in enumerate(test_images):
+    quilting(img, path+'results/')
+    print( str(index+1) +" out of "+str(len(test_images))+" done")
     
