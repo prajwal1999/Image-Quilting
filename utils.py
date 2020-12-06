@@ -43,7 +43,6 @@ def compare_blocks(blocks, curr_box_to_fill, block_size, tolerance):
 
     r = np.random.randint(len(min_err_blocks))
     return min_err_blocks[r]
-    # return blocks[min_err_blocks_idx[temp_random], :p, :q, :]
 
 
 def get_path(err):

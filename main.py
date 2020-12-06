@@ -3,5 +3,5 @@ from os.path import isfile, join
 
 path = './dataset/synthesis'
 
-onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
-print(onlyfiles)
+test_images = [f for f in listdir(path) if isfile(join(path, f))]
+print(test_images)
