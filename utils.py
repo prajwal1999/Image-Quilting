@@ -20,6 +20,7 @@ def compare_blocks(blocks, curr_box_to_fill, block_size, tolerance):
 
     errors = []
     # min_err_blocks_idx = []
+    # when curr_box_to_fill belongs to a boundary, crop blocks to that size
     [p, q, _] = curr_box_to_fill.shape
 
     for i in range(blocks.shape[0]):
@@ -67,17 +68,6 @@ def get_path(err):
 
     return mask
 
-
-
-
-
-
-
-
-
-
-
-###############
 
 def get_mask(block, ov_v, ov_h, ov_type, overlap_size):
     
