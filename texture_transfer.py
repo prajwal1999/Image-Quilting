@@ -4,8 +4,13 @@ from utils import get_mask
 import numpy as np
 path = './dataset/transfer/'
 
+<<<<<<< HEAD
 block_size = 30
 overlap_size = 10
+=======
+block_size = 10
+overlap_size = 5
+>>>>>>> 69355b3b961389c574a4f3077736bfab3a8fd08e
 alpha = 0.1
 tolerance = 0.01
 
