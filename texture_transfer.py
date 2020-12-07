@@ -85,9 +85,15 @@ def compare_blocks(blocks, curr_box_to_fill, target_block, block_size, alpha, to
 
 
 def ssd_error(block_i, curr_box_to_fill, target_block, alpha):
+    # here correspondance maps is taken to be luminance
+
     c = curr_box_to_fill
-    err1 = np.sum((block_i - c)*(block_i - c)*(c != -1))
-    err2 = np.sum((block_i - target_block)*(block_i - target_block)*(c != -1))
+    lum_block_i = np.sum(block_i, axis=2)/3
+    lum_c = np.sum(c, axis=2)/3
+    lum_target_block = np.sum(target_block, axis=2)/3
+
+    err1 = np.sum((lum_block_i - lum_c)*(lum_block_i - lum_c)*(lum_c != -1.0))
+    err2 = np.sum((lum_block_i - lum_target_block)*(lum_block_i - lum_target_block)*(lum_c != -1.0))
     return alpha*np.sqrt(err1) + (1-alpha)*np.sqrt(err2)
 
 if __name__ == "__main__":

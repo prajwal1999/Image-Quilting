@@ -4,8 +4,13 @@ from utils import compare_blocks, get_mask
 import numpy as np
 path = './dataset/synthesis/'
 
-block_size = 100
-overlap_size = 30
+# block_size = 100
+# overlap_size = 30
+# result_size = 400
+# threshold = 0.01
+
+block_size = 150
+overlap_size = 50
 result_size = 400
 threshold = 0.01
 
